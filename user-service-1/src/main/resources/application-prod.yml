@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: "user-service"
+
+server:
+  port: 8701
+
+eureka:
+  instance:
+    #服务所在的服务器域名
+    hostname: "service.domain.com"
+  client:
+    #是否将自己注册到 Eureka (服务需要将自己注册到 Eureka)
+    register-with-eureka: true
+    #是否从 Eureka 获取注册信息 (消费者需要从 Eureka 获取服务信息)
+    fetch-registry: false
+    service-url:
+      #注册中心地址
+      defaultZone: "http://eureka.domain.com:8400/eureka/"
